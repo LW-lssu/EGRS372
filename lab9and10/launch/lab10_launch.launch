@@ -1,0 +1,39 @@
+<launch>
+
+  <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch">
+    <arg name="map_file" value="$(env HOME)/map.yaml" />
+  </include>
+
+  <param name="/lab9/parameter_file" value="$(find lab9)/parameters.txt" />
+
+  <param name="/move_base/oscillation_distance" value="0.0" />
+
+  <!-- Lab 9 / Lab 10 path points -->
+  <param name="/lab9/point1/x" value="0.0" />
+  <param name="/lab9/point1/y" value="0.0" />
+  <param name="/lab9/point1/theta" value="0.0" />
+
+  <param name="/lab9/point2/x" value="1.0" />
+  <param name="/lab9/point2/y" value="0.0" />
+  <param name="/lab9/point2/theta" value="0.0" />
+
+  <param name="/lab9/point3/x" value="1.0" />
+  <param name="/lab9/point3/y" value="1.0" />
+  <param name="/lab9/point3/theta" value="90.0" />
+
+  <param name="/lab9/point4/x" value="0.0" />
+  <param name="/lab9/point4/y" value="1.0" />
+  <param name="/lab9/point4/theta" value="180.0" />
+
+  <param name="/lab9/point5/x" value="0.0" />
+  <param name="/lab9/point5/y" value="0.0" />
+  <param name="/lab9/point5/theta" value="0.0" />
+
+  <node pkg="lab9" type="human_sim" name="human_sim" output="screen" />
+  <node pkg="lab9" type="Visual_Updater" name="Visual_Updater" output="screen" />
+  <node pkg="lab9" type="lab10" name="lab10" output="screen" />
+
+</launch>
+
+
+
